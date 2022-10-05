@@ -1,7 +1,10 @@
 def findKey(words: list) -> int:
     new = sorted(words, key=lambda el: len(el))
-    if len(new[0]) == 1:
-        key = ord(new[0]) - 97
+    if len(new[0]) == 1 and new[0].isalpha():
+        if new[0].isupper():
+            return ord(new[0]) - 65
+        else:
+            key = ord(new[0]) - 97
     else:
         key = -30
     return key
